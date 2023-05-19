@@ -5,13 +5,17 @@ import "swiper/swiper-bundle.css";
 import "swiper/css";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
+import "swiper/swiper.min.css";
+/* import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css"; */
 
-SwiperCore.use([Navigation, Pagination, Autoplay]);
+SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use(Autoplay);
 
 const SwiperAds = ({ items }) => {
   const params = {
     spaceBetween: 30,
-    slidesPerView: 1,
+    slidesPerView: "3",
     centeredSlides: true,
     loop: true,
     autoplay: {
