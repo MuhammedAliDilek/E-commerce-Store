@@ -13,7 +13,12 @@ const Navbar = () => {
     <nav className="flex items-center justify-between p-4 bg-gray-900">
       <div className="flex items-center">
         <Link href="/" className="flex items-center text-xl font-bold">
-          Amazona
+          <Image
+            src="/images/logo/logo-no-background.png"
+            alt="The continental"
+            width={120}
+            height={20}
+          />
         </Link>
       </div>
       <div className="flex items-center flex-grow">
@@ -46,7 +51,7 @@ const Navbar = () => {
       <div className="flex items-center">
         <div className="mr-4">
           <select className="p-1 border border-gray-300 rounded-md">
-            <option value="az">
+            {/* <option value="az">
               AZ
               <Image
                 src="/images/azerbaijan.png"
@@ -55,7 +60,15 @@ const Navbar = () => {
                 height={10}
               />
             </option>
-            <option value="us">🇺🇸</option>
+            <option value="us" className="flex items-center">
+              <Image
+                src="/images/azerbaijan.png"
+                alt="United States Flag"
+                width={24}
+                height={16}
+                className="mr-2"
+              /> 
+            </option> */}
             <option value="es">🇪🇸</option>
           </select>
         </div>

@@ -74,13 +74,7 @@ const CategorySection = () => {
             <Link href={`/categories/${category.slug}`} key={index}>
               <div className={`p-4 border rounded-lg ${category.bgColor}`}>
                 {category.image && (
-                  <div className="relative aspect-w-1 aspect-h-1">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
+                  <div className="relative aspect-w-1 aspect-h-1"></div>
                 )}
                 <div className="mt-2 text-center">
                   <h3 className="text-lg font-semibold">{category.title}</h3>
