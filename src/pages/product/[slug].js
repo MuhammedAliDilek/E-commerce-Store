@@ -17,7 +17,6 @@ export default function ProductScreen() {
     return <div>Product not found</div>;
   }
   const addToCardHandler = () => {
-    //this is the basket function
     const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
@@ -27,6 +26,12 @@ export default function ProductScreen() {
     }
     dispatch({ type: `CART_ADD_ITEM`, payload: { ...product, quantity } });
   };
+
+  const goToCartHandler = () => {
+    // Implement the logic to navigate to the cart page
+    // using the router or any navigation method of your choice
+  };
+
   return (
     <Layout title={product.name}>
       <div className="py-2">
@@ -62,12 +67,22 @@ export default function ProductScreen() {
               <div className="font-bold">Status:</div>
               <div className="text-green-600">In Stock</div>
             </div>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded-full"
-              onClick={addToCardHandler}
-            >
-              Add to Cart
-            </button>
+            <div className="flex flex-col items-center">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded-full mb-2"
+                onClick={addToCardHandler}
+              >
+                Add to Cart
+              </button>
+              {cart.cartItems.length > 0 && (
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded-full"
+                  onClick={goToCartHandler}
+                >
+                  🛒Go to Cart
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
