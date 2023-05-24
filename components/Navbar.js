@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useContext } from "react";
+import { Store } from "../utils/Store";
 
 const Navbar = () => {
   const [category, setCategory] = useState("");
@@ -8,13 +10,15 @@ const Navbar = () => {
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
   };
+  const { state, dispatch } = useContext(Store);
+  const { cart } = state;
 
   return (
     <nav className="flex items-center justify-between p-4 bg-gray-900">
       <div className="flex items-center">
         <Link href="/" className="flex items-center text-xl font-bold">
           <Image
-            src="/images/logo/logo-no-background.png"
+            src="/images/logo/logo-high-res.png"
             alt="The continental"
             width={120}
             height={20}
@@ -80,6 +84,11 @@ const Navbar = () => {
         <div>
           <Link href="/cart" className="p-2">
             Cart
+            {cart.cartItems.length > 0 && (
+              <span className="ml-1 rounded-full bg-blue-500 px-2 py-1 text-xs font-bold text-white">
+                {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+              </span>
+            )}
           </Link>
         </div>
       </div>
