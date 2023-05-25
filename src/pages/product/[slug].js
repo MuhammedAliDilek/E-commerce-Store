@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Layout from "../../../components/Layout";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import data from "../../../utils/data";
 import Link from "next/link";
 import Image from "next/image";
@@ -75,12 +75,11 @@ export default function ProductScreen() {
                 Add to Cart
               </button>
               {cart.cartItems.length > 0 && (
-                <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded-full"
-                  onClick={goToCartHandler}
-                >
-                  🛒Go to Cart
-                </button>
+                <Link href="../cart">
+                  <button className="bg-blue-500 text-white px-4 py-2 rounded-full">
+                    Go to Cart🛒
+                  </button>
+                </Link>
               )}
             </div>
           </div>
