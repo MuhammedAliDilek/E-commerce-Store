@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useContext } from "react";
 import { Store } from "../utils/Store";
+import { useSession } from "next-auth/react";
+//import "react-toastify/dist/react-Toastify.css";
 
 const Navbar = () => {
   const [category, setCategory] = useState("");
@@ -10,12 +12,15 @@ const Navbar = () => {
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
   };
+  const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [CartItemsCount, setCartItemsCount] = useState(0);
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
+
+  if (session.user) console.log(session.user.name);
 
   return (
     <nav className="flex items-center justify-between p-4 bg-gray-900">
@@ -116,9 +121,17 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="mr-4">
-          <Link href="/login" className="p-2">
-            Login / Sign-in
-          </Link>
+          <p className="font-bold text-blue-600">
+            {status === "loading" ? (
+              "Loading"
+            ) : session?.user ? (
+              session.user.name
+            ) : (
+              <Link href="/login" className="p-2">
+                Login / Sign-in
+              </Link>
+            )}
+          </p>
         </div>
       </div>
     </nav>
