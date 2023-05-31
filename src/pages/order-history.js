@@ -39,14 +39,14 @@ export default function OrderHistoryScreen() {
 
   return (
     <Layout title="Order History">
-      <h1 className="mb-4 text-xl">Order History</h1>
+      <h1 className="mb-4 text-xl font-bold">Order History</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
         <div className="alert-error">{error}</div>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
+        <div className="flex justify-center overflow-x-auto ">
+          <table className=" w-full">
             <thead className="border-b">
               <tr>
                 <th className="px-5 text-left">ID</th>
@@ -60,18 +60,22 @@ export default function OrderHistoryScreen() {
             <tbody>
               {orders.map((order) => (
                 <tr key={order._id} className="border-b">
-                  <td className="p-5">{order._id.substring(20, 24)}</td>
-                  <td className="p-5">{order.createdAt.substring(0, 10)}</td>
-                  <td className="p-5">${order.totalPrice}</td>
-                  <td className="p-5">
+                  <td className="p-5 text-center">
+                    {order._id.substring(20, 24)}
+                  </td>
+                  <td className="p-5 text-center">
+                    {order.createdAt.substring(0, 10)}
+                  </td>
+                  <td className="p-5 text-center">${order.totalPrice}</td>
+                  <td className="p-5 text-center">
                     {order.isPaid ? order.paidAt.substring(0, 10) : "not paid"}
                   </td>
-                  <td className="p-5">
+                  <td className="p-5 text-center">
                     {order.isDelivered
                       ? order.deliveredAt.substring(0, 10)
                       : "not delivered"}
                   </td>
-                  <td className="p-5">
+                  <td className="p-5 text-center">
                     <Link href={`/order/${order._id}`} passHref>
                       Details
                     </Link>

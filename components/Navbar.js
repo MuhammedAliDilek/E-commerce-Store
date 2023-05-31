@@ -131,7 +131,7 @@ const Navbar = () => {
             {status === "loading" ? (
               "Loading"
             ) : session?.user ? (
-              <Menu as="div" className="relative inline-block">
+              <Menu as="div" className="relative inline-block z-40">
                 <Menu.Button>{session.user.name}</Menu.Button>
                 <Menu.Items className="absolute right-0 w-36 origin-top-right shadow-lg bg-white">
                   <Menu.Item>
