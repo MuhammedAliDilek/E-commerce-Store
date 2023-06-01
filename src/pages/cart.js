@@ -31,7 +31,7 @@ function CartScreen() {
       ) : (
         <div className="grid grid-cols-4 gap-5">
           <div className="overflow-x-auto col-span-3">
-            <table className="min-w-full ">
+            <table className="min-w-full  ">
               <thead className="border-b">
                 <tr>
                   <th className="p-5 text-left">Item</th>
@@ -86,7 +86,7 @@ function CartScreen() {
               </tbody>
             </table>
           </div>
-          <div className="card p-5 ">
+          <div className="card p-5  h-44">
             <ul>
               <li>
                 <div className="pb-3 text-xl">
