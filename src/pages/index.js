@@ -3,7 +3,8 @@ import ProductItem from "../../components/Productitems";
 import SwiperAds from "../../components/swiper";
 import data from "../../utils/data";
 import CategorySection from "../../components/categorySection";
-
+/* import db from "../../utils/db";
+ */
 export default function Home() {
   const shuffled = data.products.sort(() => 0.5 - Math.random());
   const randomProduct = shuffled.slice(0, 6);
@@ -24,7 +25,18 @@ export default function Home() {
     </Layout>
   );
 }
-
+/* export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find().lean();
+  const featuredProducts = await Product.find({ isFeatured: true }).lean();
+  return {
+    props: {
+      featuredProducts: featuredProducts.map(db.convertDocToObj),
+      products: products.map(db.convertDocToObj),
+    },
+  };
+}
+ */
 //Klausun yaptigi image function
 /* import Layout from "../../components/Layout";
 import ProductItem from "../../components/Productitems";
