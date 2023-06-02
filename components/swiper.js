@@ -45,11 +45,13 @@ const SwiperAds = ({ items }) => {
     },
   };
 
+  let id = 0;
+
   return (
     <div className="padding-4">
       <Swiper {...params}>
         {items?.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={id++}>
             <div className="p-4 rounded-lg border border-gray-200 shadow-md">
               <Image
                 src={item.image}

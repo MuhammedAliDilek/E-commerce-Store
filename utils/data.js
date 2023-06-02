@@ -3,12 +3,14 @@ import bcrypt from "bcryptjs";
 const data = {
   users: [
     {
+      id: 999,
       name: "John",
       email: "admin@example.com",
       password: bcrypt.hashSync("123456"),
       isAdmin: true,
     },
     {
+      id: 9999,
       name: "Jane",
       email: "user@example.com",
       password: bcrypt.hashSync("123456"),
@@ -31,19 +33,7 @@ const data = {
       id: 1,
     },
     {
-      name: "camera",
-      slug: "camera",
-      category: "Ads",
-      image: "/images/camera.jpg",
-      price: 80,
-      brand: "Adidas",
-      rating: 3.2,
-      numReviews: 10,
-      countInStock: 20,
-
-      banner: "/images/banner2.jpg",
-    },
-    {
+      id: 4,
       name: "Free Shirt",
       slug: "free-shirt",
       category: "Shirts",
@@ -58,6 +48,7 @@ const data = {
       banner: "/images/banner1.jpg",
     },
     {
+      id: 5,
       name: "Fit Shirt",
       slug: "fit-shirt",
       category: "Shirts",
@@ -72,6 +63,7 @@ const data = {
       banner: "/images/banner2.jpg",
     },
     {
+      id: 6,
       name: "Slim Shirt",
       slug: "slim-shirt",
       category: "Shirts",
@@ -84,6 +76,7 @@ const data = {
       description: "A popular shirt",
     },
     {
+      id: 7,
       name: "Golf Pants",
       slug: "golf-pants",
       category: "Pants",
@@ -97,6 +90,7 @@ const data = {
       description: "Smart looking pants",
     },
     {
+      id: 8,
       name: "Fit Pants",
       slug: "fit-pants",
       category: "Pants",
@@ -110,6 +104,7 @@ const data = {
       description: "A popular pants",
     },
     {
+      id: 9,
       name: "Classic Pants",
       slug: "classic-pants",
       category: "Pants",
@@ -125,6 +120,7 @@ const data = {
   ],
   products: [
     {
+      id: 10,
       name: "Free Shirt",
       slug: "free-shirt",
       category: "Shirts",
@@ -140,6 +136,7 @@ const data = {
       banner: "/images/banner1.jpg",
     },
     {
+      id: 11,
       name: "Fit Shirt",
       slug: "fit-shirt",
       category: "Shirts",
@@ -155,6 +152,7 @@ const data = {
       banner: "/images/banner2.jpg",
     },
     {
+      id: 12,
       name: "Slim Shirt",
       slug: "slim-shirt",
       category: "Shirts",
@@ -168,6 +166,7 @@ const data = {
       description: "A popular shirt",
     },
     {
+      id: 13,
       name: "Golf Pants",
       slug: "golf-pants",
       category: "Pants",
@@ -181,6 +180,7 @@ const data = {
       description: "Smart looking pants",
     },
     {
+      id: 14,
       name: "Fit Pants",
       slug: "fit-pants",
       category: "Pants",
@@ -194,6 +194,7 @@ const data = {
       description: "A popular pants",
     },
     {
+      id: 15,
       name: "Classic Pants",
       slug: "classic-pants",
       category: "Pants",
@@ -207,6 +208,7 @@ const data = {
       description: "A popular pants",
     },
     {
+      id: 16,
       name: "Smart TV",
       slug: "smart-tv",
       category: "Electronics",
@@ -223,6 +225,7 @@ const data = {
     },
 
     {
+      id: 17,
       name: "Denim Jacket",
       slug: "denim-jacket",
       category: "Clothing",
@@ -238,6 +241,7 @@ const data = {
     },
 
     {
+      id: 18,
       name: "The Great Gatsby",
       slug: "the-great-gatsby",
       category: "Books",
@@ -254,6 +258,7 @@ const data = {
     },
 
     {
+      id: 19,
       name: "Wireless Headphones",
       slug: "wireless-headphones",
       category: "Electronics",
@@ -270,6 +275,7 @@ const data = {
     },
 
     {
+      id: 20,
       name: "Striped T-Shirt",
       slug: "striped-t-shirt",
       category: "Clothing",
@@ -286,6 +292,7 @@ const data = {
     },
 
     {
+      id: 21,
       name: "To Kill a Mockingbird",
       slug: "to-kill-a-mockingbird",
       category: "Books",
@@ -302,7 +309,8 @@ const data = {
     },
 
     {
-      name: "Digital Camera",
+      id: 22,
+      name: "Digital Camera XL",
       slug: "digital-camera",
       category: "Electronics",
       image: "/images/camera.jpg",
@@ -317,6 +325,7 @@ const data = {
     },
 
     {
+      id: 23,
       name: "Leather Boots",
       slug: "leather-boots",
       category: "Clothing",
@@ -332,6 +341,7 @@ const data = {
     },
 
     {
+      id: 24,
       name: "The Lord of the Rings",
       slug: "the-lord-of-the-rings",
       category: "Books",
@@ -347,6 +357,7 @@ const data = {
     },
 
     {
+      id: 25,
       name: "Smartphone",
       slug: "smartphone",
       category: "Electronics",
@@ -363,6 +374,7 @@ const data = {
     },
 
     {
+      id: 26,
       name: "Summer Dress",
       slug: "summer-dress",
       category: "Clothing",
@@ -379,6 +391,7 @@ const data = {
     },
 
     {
+      id: 27,
       name: "1984",
       slug: "1984",
       category: "Books",
@@ -395,6 +408,7 @@ const data = {
     },
 
     {
+      id: 28,
       name: "Wireless Earbuds",
       slug: "wireless-earbuds",
       category: "Electronics",
@@ -411,6 +425,7 @@ const data = {
     },
 
     {
+      id: 29,
       name: "Hooded Sweatshirt",
       slug: "hooded-sweatshirt",
       category: "Clothing",
@@ -427,6 +442,7 @@ const data = {
     },
 
     {
+      id: 30,
       name: "Pride and Prejudice",
       slug: "pride-and-prejudice",
       category: "Books",
@@ -443,6 +459,7 @@ const data = {
     },
 
     {
+      id: 31,
       name: "Gaming Console",
       slug: "gaming-console",
       category: "Electronics",
@@ -459,6 +476,7 @@ const data = {
     },
 
     {
+      id: 32,
       name: "Sunglasses",
       slug: "sunglasses",
       category: "Clothing",
@@ -475,6 +493,7 @@ const data = {
     },
 
     {
+      id: 33,
       name: "The Catcher in the Rye",
       slug: "the-catcher-in-the-rye",
       category: "Books",
@@ -491,6 +510,7 @@ const data = {
     },
 
     {
+      id: 34,
       name: "Laptop",
       slug: "laptop",
       category: "Electronics",
@@ -507,6 +527,7 @@ const data = {
     },
 
     {
+      id: 35,
       name: "Leather Belt",
       slug: "leather-belt",
       category: "Clothing",
@@ -523,6 +544,7 @@ const data = {
     },
 
     {
+      id: 36,
       name: "The Alchemist",
       slug: "the-alchemist",
       category: "Books",
@@ -539,6 +561,7 @@ const data = {
     },
 
     {
+      id: 37,
       name: "Wireless Speaker",
       slug: "wireless-speaker",
       category: "Electronics",
@@ -555,6 +578,7 @@ const data = {
     },
 
     {
+      id: 38,
       name: "Running Shoes",
       slug: "running-shoes",
       category: "Clothing",
@@ -571,6 +595,7 @@ const data = {
     },
 
     {
+      id: 39,
       name: "The Hobbit",
       slug: "the-hobbit",
       category: "Books",
@@ -587,6 +612,7 @@ const data = {
     },
 
     {
+      id: 40,
       name: "Smart Watch",
       slug: "smart-watch",
       category: "Electronics",
@@ -603,6 +629,7 @@ const data = {
     },
 
     {
+      id: 41,
       name: "Casual Shirt",
       slug: "casual-shirt",
       category: "Clothing",
@@ -618,6 +645,7 @@ const data = {
     },
 
     {
+      id: 42,
       name: "Brave New World",
       slug: "brave-new-world",
       category: "Books",
@@ -634,6 +662,7 @@ const data = {
     },
 
     {
+      id: 43,
       name: "Bluetooth Earphones",
       slug: "bluetooth-earphones",
       category: "Electronics",
@@ -650,6 +679,7 @@ const data = {
     },
 
     {
+      id: 44,
       name: "Denim Jeans",
       slug: "denim-jeans",
       category: "Clothing",
@@ -666,6 +696,7 @@ const data = {
     },
 
     {
+      id: 45,
       name: "The Da Vinci Code",
       slug: "the-da-vinci-code",
       category: "Books",
@@ -682,6 +713,7 @@ const data = {
     },
 
     {
+      id: 46,
       name: "Tablet",
       slug: "tablet",
       category: "Electronics",
@@ -698,6 +730,7 @@ const data = {
     },
 
     {
+      id: 47,
       name: "Winter Coat",
       slug: "winter-coat",
       category: "Clothing",
@@ -714,6 +747,7 @@ const data = {
     },
 
     {
+      id: 48,
       name: "The Hunger Games",
       slug: "the-hunger-games",
       category: "Books",
@@ -730,6 +764,7 @@ const data = {
     },
 
     {
+      id: 49,
       name: "Wireless Mouse",
       slug: "wireless-mouse",
       category: "Electronics",
@@ -746,6 +781,7 @@ const data = {
     },
 
     {
+      id: 50,
       name: "Tennis Shoes",
       slug: "tennis-shoes",
       category: "Clothing",
@@ -762,6 +798,7 @@ const data = {
     },
 
     {
+      id: 51,
       name: "The Chronicles of Narnia",
       slug: "the-chronicles-of-narnia",
       category: "Books",
@@ -778,6 +815,7 @@ const data = {
     },
 
     {
+      id: 52,
       name: "Digital Camera",
       slug: "digital-camera",
       category: "Electronics",
@@ -794,6 +832,7 @@ const data = {
     },
 
     {
+      id: 53,
       name: "Knit Sweater",
       slug: "knit-sweater",
       category: "Clothing",
@@ -808,6 +847,7 @@ const data = {
       description: "A cozy and stylish knit sweater for chilly days.",
     },
     {
+      id: 54,
       name: "Headphones",
       slug: "headphones",
       category: "Electronics",
@@ -824,6 +864,7 @@ const data = {
     },
 
     {
+      id: 55,
       name: "Formal Dress",
       slug: "formal-dress",
       category: "Clothing",
@@ -840,6 +881,7 @@ const data = {
     },
 
     {
+      id: 56,
       name: "Smart TV",
       slug: "smart-tv",
       category: "Electronics",
@@ -856,6 +898,7 @@ const data = {
     },
 
     {
+      id: 57,
       name: "Swimwear",
       slug: "swimwear",
       category: "Clothing",
@@ -872,10 +915,12 @@ const data = {
     },
 
     {
+      id: 58,
       name: "Wireless Keyboard",
       slug: "wireless-keyboard",
       category: "Electronics",
-      image: "/images/keyboard.jpg",
+      image:
+        "https://cdn.pixabay.com/photo/2015/12/03/16/49/keyboard-1075248_640.jpg",
       alt: "Wireless keyboard",
       price: 49.99,
       brand: "Logitech",
@@ -887,6 +932,7 @@ const data = {
     },
 
     {
+      id: 59,
       name: "Hoodie",
       slug: "hoodie",
       category: "Clothing",
@@ -902,6 +948,7 @@ const data = {
     },
 
     {
+      id: 60,
       name: "Portable Charger",
       slug: "portable-charger",
       category: "Electronics",
@@ -918,6 +965,7 @@ const data = {
     },
 
     {
+      id: 61,
       name: "Sweatpants",
       slug: "sweatpants",
       category: "Clothing",

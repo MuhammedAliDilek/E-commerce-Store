@@ -127,7 +127,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="mr-4">
-          <p className="font-bold text-blue-600">
+          <div className="font-bold text-blue-600">
             {status === "loading" ? (
               "Loading"
             ) : session?.user ? (
@@ -173,7 +173,7 @@ const Navbar = () => {
                 Login / Sign-in
               </Link>
             )}
-          </p>
+          </div>
         </div>
       </div>
     </nav>

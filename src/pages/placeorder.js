@@ -104,8 +104,8 @@ export default function PlaceOrderScreen() {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItems.map((item) => (
-                      <tr key={item._id} className="border-b">
+                    {cartItems.map((item, index) => (
+                      <tr key={item._id || index} className="border-b">
                         <td>
                           <Link
                             href={`/product/${item.slug}`}
