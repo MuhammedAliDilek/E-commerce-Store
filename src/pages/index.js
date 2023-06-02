@@ -5,7 +5,27 @@ import data from "../../utils/data";
 import CategorySection from "../../components/categorySection";
 /* import db from "../../utils/db";
  */
+
 export default function Home() {
+  return (
+    <Layout title="Home Page">
+      <div className="my-4">
+        <SwiperAds items={data.ads} />
+      </div>
+      <div className="grid gap-4 grid-cols-6">
+        {data.products.map((product) => (
+          <ProductItem product={product} key={product.slug}></ProductItem>
+        ))}
+      </div>
+      <div>
+        <CategorySection />
+      </div>
+    </Layout>
+  );
+}
+
+// random product create hydration problems
+/* export default function Home() {
   const shuffled = data.products.sort(() => 0.5 - Math.random());
   const randomProduct = shuffled.slice(0, 6);
 
@@ -24,7 +44,7 @@ export default function Home() {
       </div>
     </Layout>
   );
-}
+} */
 /* export async function getServerSideProps() {
   await db.connect();
   const products = await Product.find().lean();

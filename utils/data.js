@@ -209,8 +209,8 @@ const data = {
     },
     {
       id: 16,
-      name: "Smart TV",
-      slug: "smart-tv",
+      name: " Very Smart TV",
+      slug: "very-smart-tv",
       category: "Electronics",
       image:
         "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80",
@@ -311,7 +311,7 @@ const data = {
     {
       id: 22,
       name: "Digital Camera XL",
-      slug: "digital-camera",
+      slug: "digital-XL-camera",
       category: "Electronics",
       image: "/images/camera.jpg",
       alt: "Digital camera",
@@ -883,7 +883,7 @@ const data = {
     {
       id: 56,
       name: "Smart TV",
-      slug: "smart-tv",
+      slug: "smart-very-tv",
       category: "Electronics",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Y7LJOyxZnmfsx7s6WIrqjwXeOvsMG6w32p4cVk72k94RsP-v8mrd_6AbKlF4SWJMp0U&usqp=CAU",
