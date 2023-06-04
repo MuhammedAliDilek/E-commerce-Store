@@ -42,8 +42,9 @@ export default function Search(props) {
     page = 1,
   } = router.query;
   let brands;
+  let categories;
 
-  const { products, countProducts, categories, pages } = props;
+  const { products, countProducts, pages } = props;
   let searchedData;
 
   searchedData = query
@@ -57,12 +58,35 @@ export default function Search(props) {
     : data.products;
   //...new Set removes duplicated items
   brands = [...new Set(searchedData.map((el) => el.brand))];
-
+  categories = [...new Set(searchedData.map((el) => el.category))];
+  // Here is the brand , category, price and rating filters are
   searchedData =
     brand === "all"
       ? searchedData
       : searchedData.filter((datum) => {
           return datum.brand.toLowerCase() === brand.toLowerCase();
+        });
+
+  searchedData =
+    category === "all"
+      ? searchedData
+      : searchedData.filter((datum) => {
+          return datum.category.toLowerCase() === category.toLowerCase();
+        });
+
+  searchedData =
+    price === "all"
+      ? searchedData
+      : searchedData.filter((datum) => {
+          const [minPrice, maxPrice] = price.split("-").map(Number);
+          return datum.price >= minPrice && datum.price <= maxPrice;
+        });
+
+  searchedData =
+    rating === "all"
+      ? searchedData
+      : searchedData.filter((datum) => {
+          return datum.rating >= rating;
         });
 
   // artan price azalan icin ise a ile b nin yerlerini degistir return icersinde.
@@ -81,8 +105,12 @@ export default function Search(props) {
     sortedData = searchedData.sort((a, b) => {
       return b.price - a.price;
     });
+  } else if (sort === "reviews") {
+    // Added condition for "Customer Reviews"
+    sortedData = searchedData.sort((a, b) => {
+      return b.numReviews - a.numReviews;
+    });
   }
-
   const filterSearch = ({
     page,
     category,
@@ -122,6 +150,7 @@ export default function Search(props) {
   const sortHandler = (e) => {
     filterSearch({ sort: e.target.value });
   };
+
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
   };
@@ -154,12 +183,11 @@ export default function Search(props) {
               onChange={categoryHandler}
             >
               <option value="all">All</option>
-              {categories &&
-                categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
+              {categories?.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
             </select>
           </div>
           <div className="mb-3">
@@ -223,7 +251,8 @@ export default function Search(props) {
                 <option value="featured">Featured</option>
                 <option value="lowest">Price: Low to High</option>
                 <option value="highest">Price: High to Low</option>
-                <option value="toprated">Customer Reviews</option>
+                <option value="reviews">Customer Reviews</option>{" "}
+                {/* Updated option */}
                 <option value="newest">Newest Arrivals</option>
               </select>
             </div>
@@ -299,6 +328,7 @@ export async function getServerSideProps({ query }) {
           },
         }
       : {};
+
   const order =
     sort === "featured"
       ? { isFeatured: -1 }

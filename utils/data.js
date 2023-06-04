@@ -19,20 +19,6 @@ const data = {
   ],
   ads: [
     {
-      name: "house",
-      slug: "house",
-      category: "Ads",
-      image: "/images/house.jpg",
-      brand: "Nike",
-      rating: 4.5,
-      numReviews: 8,
-      countInStock: 20,
-      description: "A popular shirt",
-      isFeatured: true,
-      banner: "/images/banner1.jpg",
-      id: 1,
-    },
-    {
       id: 4,
       name: "Free Shirt",
       slug: "free-shirt",

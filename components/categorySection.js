@@ -1,72 +1,63 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const CategorySection = () => {
   const categories = [
     {
-      title: "Category 1",
-      image: "/images/pants1.jpg",
+      title: "Electronics",
+      image: "/images/category/electronics.jpg",
       bgColor: "bg-blue-200",
-      slug: "category1",
     },
     {
-      title: "Category 2",
-      image: "category2.jpg",
+      title: "Clothes",
+      image: "/images/category/clothes.jpg",
       bgColor: "bg-red-200",
-      slug: "category2",
     },
     {
-      title: "Category 3",
-      image: "category3.jpg",
+      title: "Books",
+      image: "/images/category/books.jpg",
       bgColor: "bg-yellow-200",
-      slug: "category3",
     },
     {
       title: "Category 4",
-      image: "category4.jpg",
+      image: "",
       bgColor: "bg-green-200",
-      slug: "category4",
     },
     {
       title: "Category 5",
-      image: "category5.jpg",
+      image: "",
       bgColor: "bg-purple-200",
-      slug: "category5",
     },
     {
       title: "Category 6",
-      image: "category6.jpg",
+      image: "",
       bgColor: "bg-pink-200",
-      slug: "category6",
     },
     {
       title: "Category 7",
-      image: "category7.jpg",
+      image: "",
       bgColor: "bg-indigo-200",
-      slug: "category7",
     },
     {
       title: "Category 8",
-      image: "category8.jpg",
+      image: "",
       bgColor: "bg-teal-200",
-      slug: "category8",
     },
     {
       title: "Category 9",
-      image: "category9.jpg",
+      image: "",
       bgColor: "bg-orange-200",
-      slug: "category9",
     },
     {
       title: "Category 10",
-      image: "category10.jpg",
+      image: "",
       bgColor: "bg-gray-200",
-      slug: "category10",
     },
   ];
 
   return (
-    <section className="py-10 ">
+    <section className="py-10">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8">Explore</h2>
         <div className="grid grid-cols-6 gap-6">
@@ -74,7 +65,15 @@ const CategorySection = () => {
             <Link href={`/categories/${category.slug}`} key={index}>
               <div className={`p-4 border rounded-lg ${category.bgColor}`}>
                 {category.image && (
-                  <div className="relative aspect-w-1 aspect-h-1"></div>
+                  <div className="relative aspect-w-1 aspect-h-1">
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
                 )}
                 <div className="mt-2 text-center">
                   <h3 className="text-lg font-semibold">{category.title}</h3>

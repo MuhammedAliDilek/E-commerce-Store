@@ -63,12 +63,13 @@ const SwiperAds = ({ items }) => {
               <h3 className="text-lg font-medium mt-2">{item.title}</h3>
               <p className="text-gray-600">{item.description}</p>
               <div className="mt-4 flex justify-between items-center">
-                <span className="text-gray-800 font-bold text-xl">
+                {/* Buy now button */}
+                {/*  <span className="text-gray-800 font-bold text-xl">
                   {item.price}
                 </span>
                 <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow">
                   Buy now
-                </button>
+                </button> */}
               </div>
             </div>
           </SwiperSlide>
