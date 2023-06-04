@@ -133,6 +133,7 @@ const data = {
       countInStock: 20,
       description: "A popular shirt",
       isFeatured: true,
+      popularity: 10,
       banner: "/images/banner1.jpg",
     },
     {
@@ -149,6 +150,7 @@ const data = {
       countInStock: 20,
       description: "A popular shirt",
       isFeatured: true,
+      popularity: 13,
       banner: "/images/banner2.jpg",
     },
     {

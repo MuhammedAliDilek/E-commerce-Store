@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import ProductItem from "../../components/Productitems";
+import ProductItem from "../../components/Productitem";
 import SwiperAds from "../../components/swiper";
 import data from "../../utils/data";
 import CategorySection from "../../components/categorySection";

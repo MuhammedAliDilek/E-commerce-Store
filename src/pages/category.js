@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import ProductItem from "../../components/Productitems";
+import ProductItem from "../../components/Productitem";
 import CategorySection from "../../components/CategorySection";
 import data from "../../utils/data";
 
