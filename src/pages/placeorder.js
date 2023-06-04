@@ -82,7 +82,9 @@ export default function PlaceOrderScreen() {
                   {shippingAddress.country}
                 </div>
                 <div>
-                  <Link href="/shipping">Edit</Link>
+                  <Link href="/shipping">
+                    <button>Edit</button>
+                  </Link>
                 </div>
               </div>
               <div className="card p-5">
