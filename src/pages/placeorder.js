@@ -71,7 +71,7 @@ export default function PlaceOrderScreen() {
           Cart is empty. <Link href="/">Go shopping</Link>
         </div>
       ) : (
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 ">
           <div className="col-span-4">
             <div className="">
               <div className="card p-5">
@@ -104,8 +104,8 @@ export default function PlaceOrderScreen() {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItems.map((item) => (
-                      <tr key={item._id} className="border-b">
+                    {cartItems.map((item, index) => (
+                      <tr key={item._id || index} className="border-b">
                         <td>
                           <Link
                             href={`/product/${item.slug}`}
@@ -139,32 +139,32 @@ export default function PlaceOrderScreen() {
               </div>
             </div>
           </div>
-          <div className="col-span-1">
-            <div className="card p-5 fixed right-0 top-0 h-full">
+          <div className="row-end-">
+            <div className="card p-5 right-20 ml-5">
               <h2 className="mb-2 text-lg">Order Summary</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Items</div>
-                    <div>${itemsPrice}</div>
+                    <div>{itemsPrice}$</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>${taxPrice}</div>
+                    <div>{taxPrice}$</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>${shippingPrice}</div>
+                    <div>{shippingPrice}$</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Total</div>
-                    <div>${totalPrice}</div>
+                    <div>{totalPrice}$</div>
                   </div>
                 </li>
                 <li>

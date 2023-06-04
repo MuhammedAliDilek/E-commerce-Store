@@ -7,18 +7,31 @@ import { signOut, useSession } from "next-auth/react";
 import { Menu } from "@headlessui/react";
 import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
-//import "react-toastify/dist/react-Toastify.css";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
-  const [category, setCategory] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
+  const router = useRouter();
+
+  const handleCategoryChange = () => {
+    router.push(`/search?query=${searchText}`);
   };
+
+  const handleSearchTextChange = (event) => {
+    const value = event.target.value;
+    setSearchText(value);
+  };
+
+  const handleSearch = () => {
+    handleCategoryChange();
+  };
+
   const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [CartItemsCount, setCartItemsCount] = useState(0);
+
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
@@ -28,6 +41,7 @@ const Navbar = () => {
     dispatch({ type: "CART_RESERT" });
     signOut({ callbackUrl: "/login" });
   };
+
   return (
     <nav className="flex items-center justify-between p-4 bg-gray-900">
       <div className="flex items-center">
@@ -52,7 +66,6 @@ const Navbar = () => {
         <div className="relative flex-grow">
           <select
             className="absolute left-0 top-0 p-1 border border-gray-300 rounded-md bg-white"
-            value={category}
             onChange={handleCategoryChange}
           >
             <option value="">All Categories</option>
@@ -62,33 +75,29 @@ const Navbar = () => {
           </select>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search a product"
             className="px-2 py-1 border border-gray-300 rounded-md pl-[140px] w-full"
+            value={searchText}
+            onChange={handleSearchTextChange}
           />
+          <button
+            className="absolute right-0 top-0 p-1 bg-gray-300 rounded-md"
+            onClick={handleSearch}
+          >
+            🔍
+          </button>
         </div>
       </div>
       <div className="flex items-center">
         <div className="mr-4">
           <select className="p-1 border border-gray-300 rounded-md">
-            {/* <option value="az">
-              AZ
-              <Image
-                src="/images/azerbaijan.png"
-                alt="Azerbaijan flag"
-                width={10}
-                height={10}
-              />
+            {/*             <option value="az">Tr</option>
+             */}{" "}
+            <option value="en" className="flex items-center">
+              En
             </option>
-            <option value="us" className="flex items-center">
-              <Image
-                src="/images/azerbaijan.png"
-                alt="United States Flag"
-                width={24}
-                height={16}
-                className="mr-2"
-              /> 
-            </option> */}
-            <option value="es">🇪🇸</option>
+            {/*             <option value="es">🇪🇸</option>
+             */}{" "}
           </select>
         </div>
         <div>
@@ -107,27 +116,16 @@ const Navbar = () => {
               stroke="currentColor"
               className="w-6 h-6 ml-1"
             >
-              {
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                  />
-                </svg>
-              }
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              />
             </svg>
           </Link>
         </div>
         <div className="mr-4">
-          <p className="font-bold text-blue-600">
+          <div className="font-bold text-blue-600">
             {status === "loading" ? (
               "Loading"
             ) : session?.user ? (
@@ -173,7 +171,7 @@ const Navbar = () => {
                 Login / Sign-in
               </Link>
             )}
-          </p>
+          </div>
         </div>
       </div>
     </nav>

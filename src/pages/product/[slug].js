@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Layout from "../../../components/Layout";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import data from "../../../utils/data";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,7 +16,7 @@ export default function ProductScreen() {
   if (!product) {
     return <div>Product not found</div>;
   }
-  const addToCardHandler = () => {
+  const addToCartHandler = () => {
     const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
@@ -25,11 +25,6 @@ export default function ProductScreen() {
       return false;
     }
     dispatch({ type: `CART_ADD_ITEM`, payload: { ...product, quantity } });
-  };
-
-  const goToCartHandler = () => {
-    // Implement the logic to navigate to the cart page
-    // using the router or any navigation method of your choice
   };
 
   return (
@@ -70,7 +65,7 @@ export default function ProductScreen() {
             <div className="flex flex-col items-center">
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded-full mb-2"
-                onClick={addToCardHandler}
+                onClick={addToCartHandler}
               >
                 Add to Cart
               </button>
