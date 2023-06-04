@@ -37,7 +37,7 @@ function CartScreen() {
                   <th className="p-5 text-left">Item</th>
                   <th className="p-5 text-right">Quantity</th>
                   <th className="p-5 text-right">Price</th>
-                  <th className="p-5">Action</th>
+                  <th className="p-5">Delete</th>
                 </tr>
               </thead>
               <tbody>
