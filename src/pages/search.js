@@ -95,7 +95,7 @@ export default function Search(props) {
   let sortedData;
   if (sort === "featured") {
     sortedData = searchedData.sort((a, b) => {
-      return b.popularity - a.popularity;
+      return b.isFeatured - a.isFeatured;
     });
   } else if (sort === "lowest") {
     sortedData = searchedData.sort((a, b) => {
@@ -106,7 +106,6 @@ export default function Search(props) {
       return b.price - a.price;
     });
   } else if (sort === "reviews") {
-    // Added condition for "Customer Reviews"
     sortedData = searchedData.sort((a, b) => {
       return b.numReviews - a.numReviews;
     });
@@ -216,12 +215,11 @@ export default function Search(props) {
             <h2>Ratings</h2>
             <select className="w-full" value={rating} onChange={ratingHandler}>
               <option value="all">All</option>
-              {ratings &&
-                ratings.map((rating) => (
-                  <option key={rating} value={rating}>
-                    {rating} star{rating > 1 && "s"} & up
-                  </option>
-                ))}
+              {ratings?.map((rating) => (
+                <option key={rating} value={rating}>
+                  {rating} star{rating > 1 && "s"} & up
+                </option>
+              ))}
             </select>
           </div>
         </div>

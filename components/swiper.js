@@ -39,7 +39,7 @@ const SwiperAds = ({ items }) => {
         spaceBetween: 30,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 30,
       },
     },
@@ -48,7 +48,7 @@ const SwiperAds = ({ items }) => {
   let id = 0;
 
   return (
-    <div className="padding-4">
+    <div className="padding-4 ">
       <Swiper {...params}>
         {items?.map((item) => (
           <SwiperSlide key={id++}>
@@ -60,8 +60,8 @@ const SwiperAds = ({ items }) => {
                 width={600}
                 height={400}
               />
-              <h3 className="text-lg font-medium mt-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="text-lg font-medium mt-2">{item.name}</h3>
+              <p className="text-gray-600 font-bold">{item.brand}</p>
               <div className="mt-4 flex justify-between items-center">
                 {/* Buy now button */}
                 {/*  <span className="text-gray-800 font-bold text-xl">

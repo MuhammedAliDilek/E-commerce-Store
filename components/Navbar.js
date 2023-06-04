@@ -91,11 +91,13 @@ const Navbar = () => {
       <div className="flex items-center">
         <div className="mr-4">
           <select className="p-1 border border-gray-300 rounded-md">
-            <option value="az">Tr</option>
+            {/*             <option value="az">Tr</option>
+             */}{" "}
             <option value="en" className="flex items-center">
               En
             </option>
-            <option value="es">🇪🇸</option>
+            {/*             <option value="es">🇪🇸</option>
+             */}{" "}
           </select>
         </div>
         <div>
