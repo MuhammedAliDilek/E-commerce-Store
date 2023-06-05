@@ -1,15 +1,11 @@
-import axios from "axios";
 import { useRouter } from "next/router";
-import { useContext } from "react";
-import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
-import { Store } from "../../utils/Store";
 import XCircleIcon from "@heroicons/react/24/outline/XCircleIcon";
 import ProductItem from "../../components/Productitem";
 import Product from "../../models/Product";
 import db from "../../utils/db";
 import data from "../../utils/data";
-
+import { useCart } from "../../components/useCart";
 const PAGE_SIZE = 2;
 
 const prices = [
@@ -31,6 +27,7 @@ const ratings = [1, 2, 3, 4, 5];
 
 export default function Search(props) {
   const router = useRouter();
+  const { addToCartHandler } = useCart();
 
   const {
     query = "",
@@ -156,9 +153,9 @@ export default function Search(props) {
   const ratingHandler = (e) => {
     filterSearch({ rating: e.target.value });
   };
-
-  const { state, dispatch } = useContext(Store);
-  const addToCartHandler = async (product) => {
+  // Sorun burda api ladinda product dosyam yok yada direk useCart kullan
+  /*   const { state, dispatch } = useContext(Store);
+   */ /* const addToCartHandler = async (product) => {
     const existItem = state.cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/product/${product.slug}`);
@@ -169,7 +166,7 @@ export default function Search(props) {
     }
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
     router.push("/cart");
-  };
+  }; */
   return (
     <Layout title="search">
       <div className="grid grid-cols-4 gap-5">
@@ -259,8 +256,8 @@ export default function Search(props) {
             <div className="grid gap-4 grid-cols-3  ">
               {sortedData?.map((product) => (
                 <ProductItem
-                  key={product._id}
                   product={product}
+                  key={product.slug}
                   addToCartHandler={addToCartHandler}
                 />
               ))}
