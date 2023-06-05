@@ -161,7 +161,7 @@ export default function Search(props) {
   const addToCartHandler = async (product) => {
     const existItem = state.cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/products/${product._id}`);
+    const { data } = await axios.get(`/api/product/${product.slug}`);
 
     if (data.products.countInStock < quantity) {
       toast.error("Sorry. Product is out of stock");

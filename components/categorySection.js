@@ -19,7 +19,7 @@ const CategorySection = () => {
       image: "/images/category/books.jpg",
       bgColor: "bg-yellow-200",
     },
-    {
+    /* {
       title: "Category 4",
       image: "",
       bgColor: "bg-green-200",
@@ -53,7 +53,7 @@ const CategorySection = () => {
       title: "Category 10",
       image: "",
       bgColor: "bg-gray-200",
-    },
+    }, */
   ];
 
   return (
