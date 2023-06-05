@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import "@/styles/globals.css";
 import { StoreProvider } from "../../utils/Store";
 import { SessionProvider, useSession } from "next-auth/react";
