@@ -58,6 +58,9 @@ const Navbar = () => {
         <div className="mr-4">
           <span className="text-white">Deliver To:</span>
           <select className="p-1 border border-gray-300 rounded-md">
+            <option value="de">Germany</option>
+            <option value="Tr">Türkiye</option>
+            <option value="Fr">France</option>
             <option value="us">United States</option>
             <option value="ca">Canada</option>
             <option value="uk">United Kingdom</option>

@@ -8,52 +8,20 @@ const CategorySection = () => {
       title: "Electronics",
       image: "/images/category/electronics.jpg",
       bgColor: "bg-blue-200",
+      alt: "Electronics",
     },
     {
       title: "Clothes",
       image: "/images/category/clothes.jpg",
       bgColor: "bg-red-200",
+      alt: "Clothes",
     },
     {
       title: "Books",
       image: "/images/category/books.jpg",
       bgColor: "bg-yellow-200",
+      alt: "Books",
     },
-    /* {
-      title: "Category 4",
-      image: "",
-      bgColor: "bg-green-200",
-    },
-    {
-      title: "Category 5",
-      image: "",
-      bgColor: "bg-purple-200",
-    },
-    {
-      title: "Category 6",
-      image: "",
-      bgColor: "bg-pink-200",
-    },
-    {
-      title: "Category 7",
-      image: "",
-      bgColor: "bg-indigo-200",
-    },
-    {
-      title: "Category 8",
-      image: "",
-      bgColor: "bg-teal-200",
-    },
-    {
-      title: "Category 9",
-      image: "",
-      bgColor: "bg-orange-200",
-    },
-    {
-      title: "Category 10",
-      image: "",
-      bgColor: "bg-gray-200",
-    }, */
   ];
 
   return (
