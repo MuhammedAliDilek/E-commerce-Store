@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-4 bg-gray-900">
       <div className="flex items-center">
-        <Link href="/" className="flex items-center text-xl font-bold">
+        <Link href="/" className="flex items-center text-xl font-bold pr-4">
           <Image
             src="/images/logo/logo-high-res.png"
             alt="The continental"
@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
         <div className="relative flex-grow">
           <select
-            className="absolute left-0 top-0 p-1 border border-gray-300 rounded-md bg-white"
+            className="absolute left-0 top-0 p-1 border border-gray-300 rounded-md bg-white "
             onChange={handleCategoryChange}
           >
             <option value="">All Categories</option>
@@ -79,19 +79,19 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search a product"
-            className="px-2 py-1 border border-gray-300 rounded-md pl-[140px] w-full"
+            className="px-2 py-1 border border-gray-300 rounded-md pl-[140px] w-full pr-5"
             value={searchText}
             onChange={handleSearchTextChange}
           />
           <button
-            className="absolute right-0 top-0 p-1 bg-gray-300 rounded-md"
+            className="absolute right-0 top-0 p-1 bg-gray-300 rounded-md "
             onClick={handleSearch}
           >
             🔍
           </button>
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center p-4">
         <div className="mr-4">
           <select className="p-1 border border-gray-300 rounded-md">
             {/*             <option value="az">Tr</option>
